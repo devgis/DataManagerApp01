@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8527FE9-F2C5-45A5-8D7E-6EB2EED8793D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DataManager</RootNamespace>
+    <AssemblyName>DataManager</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bll\AddressBll.cs" />
+    <Compile Include="Bll\AnalogRunRecordBll.cs" />
+    <Compile Include="Bll\DeviceInfoBll.cs" />
+    <Compile Include="Bll\DeviceStatusBll.cs" />
+    <Compile Include="Bll\DeviceTypeBll.cs" />
+    <Compile Include="Bll\StaOneMinuteBll.cs" />
+    <Compile Include="Bll\RealDataBll.cs" />
+    <Compile Include="Bll\SwitchStatusRecordBll.cs" />
+    <Compile Include="Bll\TriggerRelationsBll.cs" />
+    <Compile Include="Common\EntityHelper.cs" />
+    <Compile Include="Common\Loger.cs" />
+    <Compile Include="Common\MessageHelper.cs" />
+    <Compile Include="Common\SQLServerHelper.cs" />
+    <Compile Include="Dal\AddressDal.cs" />
+    <Compile Include="Dal\AnalogRunRecordDal.cs" />
+    <Compile Include="Dal\DeviceInfoDal.cs" />
+    <Compile Include="Dal\DeviceStatusDal.cs" />
+    <Compile Include="Dal\DeviceTypeDal.cs" />
+    <Compile Include="Dal\RealDataDal.cs" />
+    <Compile Include="Dal\StaOneMinuteDal.cs" />
+    <Compile Include="Dal\SwitchStatusRecordDal.cs" />
+    <Compile Include="Dal\TriggerRelationsDal.cs" />
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\AnalogRunRecord.cs" />
+    <Compile Include="Entities\DeviceInfo.cs" />
+    <Compile Include="Entities\DeviceStatus.cs" />
+    <Compile Include="Entities\DeviceType.cs" />
+    <Compile Include="Entities\RealData.cs" />
+    <Compile Include="Entities\StaOneMinute.cs" />
+    <Compile Include="Entities\SwitchStatusRecord.cs" />
+    <Compile Include="Entities\TriggerRelations.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\AnalogRunRecord\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AnalogRunRecord\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AnalogRunRecord\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AnalogRunRecord\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeviceStatus\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeviceStatus\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeviceStatus\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeviceStatus\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeviceType\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeviceType\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeviceType\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeviceType\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StaOneMinute\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StaOneMinute\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StaOneMinute\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StaOneMinute\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RealData\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RealData\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RealData\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RealData\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeviceInfo\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeviceInfo\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DeviceInfo\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeviceInfo\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Address\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Address\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Address\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Address\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SwitchStatusRecord\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SwitchStatusRecord\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SwitchStatusRecord\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SwitchStatusRecord\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TriggerRelations\AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TriggerRelations\AddEdit.Designer.cs">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TriggerRelations\ListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TriggerRelations\ListForm.Designer.cs">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\AnalogRunRecord\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AnalogRunRecord\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeviceStatus\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeviceStatus\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeviceType\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeviceType\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StaOneMinute\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StaOneMinute\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RealData\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RealData\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeviceInfo\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeviceInfo\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Address\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Address\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SwitchStatusRecord\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SwitchStatusRecord\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TriggerRelations\AddEdit.resx">
+      <DependentUpon>AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TriggerRelations\ListForm.resx">
+      <DependentUpon>ListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
